@@ -31,7 +31,6 @@ body{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     width: 1110px;
-    height:520px;
     gap: 30px;
     
 }
@@ -55,7 +54,7 @@ body{
 }
 
 .personal .personal-container{
-    padding: 30px 30px 90px 35px;
+    padding: 30px 30px 80px 35px;
     display: flex;
     flex-direction: column;
 }
@@ -89,7 +88,6 @@ body{
 
 .work{
    border-radius: 20px;
-   
    position: relative; 
    overflow: hidden;
 }
@@ -210,3 +208,177 @@ body{
     background-color: var(--YellowPrimary300);
 }
 
+.report-name{
+    margin-top: 40px;
+}
+
+.container .container-task .task .hours-weeks-hours{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+    }
+/* ---- RESPONSIVE DESIGN ----*/
+
+@media (min-width:401px) and (max-width: 800px){
+    .container{
+        
+        width: 750px;
+        gap: 30px;
+    }
+
+    .name{
+        font-size: 30px;
+    }
+
+    .container-task .task .hours{
+        font-size: 30px;
+    }
+
+    .task{
+        padding: 30px 20px 40px;
+    }
+
+    .container-task .task .weeks-hours{
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .container .container-task .task .hours-weeks-hours{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:400px){
+    body {
+        align-items: flex-start;
+        justify-content: center;
+        height: auto;
+    }
+    .container{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 90%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .personal-calendar{
+        
+        height: 200px;
+    }
+    .personal{
+        height: 130px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+    }
+
+    .personal-calendar .personal .personal-container{
+        padding: 30px 0 30px 30px ;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:  start;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .personal-container .report-name .report{
+        margin: 0;
+    }
+
+    .report-name{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .personal .personal-container .name{
+        font-size: 20px;
+    }
+
+    .personal-calendar .personal .photo{
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .container .calendar .time{
+        padding: 0;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    
+    .container .work{
+        height: 160px;
+        width: 100%;
+        
+    }
+
+    .container .play{
+        height: 160px;
+        width: 100%;
+    }
+
+    .container .study{
+        height: 160px;
+        width: 100%;
+    }
+
+    .container .exercise{
+        height: 160px;
+        width: 100%;
+    }
+    
+    .container .social{
+        height: 160px;
+        width: 100%;
+    }
+
+    .container .selfcare{
+        height: 160px;
+        width: 100%;
+    }
+
+    .container-task{
+        height: 120px;
+
+    } 
+
+    .task{
+        padding: 25px;
+        gap: 10px;
+    }
+
+    .task .weeks-hours{
+        margin: 0;
+    }
+
+    .container .container-task .task .hours-weeks-hours{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hours-weeks-hours .hours{
+        font-size: 30px;
+        
+        
+    }
+    
+
+}
