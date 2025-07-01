@@ -85,6 +85,9 @@ body{
     font-size: 16px;
 }
 
+.container .calendar .days{
+    cursor: pointer;
+}
 
 .work{
    border-radius: 20px;

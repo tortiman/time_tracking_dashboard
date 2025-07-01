@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/script.js" defer></script>
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
@@ -27,9 +28,9 @@
         </section>
         <nav class="calendar">
           <div class="time">
-            <span class="days">Daily</span>
-            <span class="days">Weekly</span>
-            <span class="days">Monthly</span>
+            <span id="day" class="days">Daily</span>
+            <span id="week" class="days">Weekly</span>
+            <span id="month" class="days">Monthly</span>
           </div>
         </nav>
       </article>
@@ -44,8 +45,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="work-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="work-last"></span></span>
             </div>
           </div>
         </section>
@@ -61,8 +62,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="play-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="play-last"></span></span>
             </div>
           </div>
         </section>
@@ -78,8 +79,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="study-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="study-last"></span></span>
             </div>
           </div>
         </section>
@@ -95,8 +96,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="exercise-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="exercise-last"></span> </span>
             </div>
           </div>
         </section>
@@ -112,8 +113,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="social-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="social-last"></span> </span>
             </div>
           </div>
         </section>
@@ -129,8 +130,8 @@
               <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
             </div>
             <div class="hours-weeks-hours">
-              <span class="hours">32hrs</span>
-              <span class="weeks-hours">Last Week - 36hrs</span>
+              <span id="selfcare-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="selfcare-last"></span> </span>
             </div>
           </div>
         </section>

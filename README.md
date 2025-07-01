@@ -1,99 +1,397 @@
-# Frontend Mentor - Time tracking dashboard
+# Frontend Mentor - Time tracking dashboard solution
 
-![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this dashboard and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-If you would like to practice working with JSON data, we provide a local `data.json` file for the activities. This means you'll be able to pull the data from there instead of using the content in the `.html` file.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-### Expected behaviour
+![](./screenshots/desktop.png)
+![](./screenshots/tablet.png.png)
+![](./screenshots/mobile.png)
 
-- The text for the previous period's time should change based on the active timeframe. For Daily, it should read "Yesterday" e.g "Yesterday - 2hrs". For Weekly, it should read "Last Week" e.g. "Last Week - 32hrs". For monthly, it should read "Last Month" e.g. "Last Month - 19hrs".
+### Links
 
-## Where to find everything
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+## My process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+### Built with
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Vanilla script
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### What I learned
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+Improve the responsive design and javascript
 
-## Building your project
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/script.js" defer></script>
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body>
+    <main class="container">
+      <article class="personal-calendar">
+        <section class="personal">
+          <div class="personal-container">
+            <img src="./images/image-jeremy.png" alt="" class="photo" />
+            <div class="report-name">
+              <span class="report">Report for</span>
+              <span class="name">Jeremy Robson</span>
+            </div>
+          </div>
+        </section>
+        <nav class="calendar">
+          <div class="time">
+            <span id="day" class="days">Daily</span>
+            <span id="week" class="days">Weekly</span>
+            <span id="month" class="days">Monthly</span>
+          </div>
+        </nav>
+      </article>
+      <article class="work">
+        <section class="upper-image work-image">
+          <img src="./images/icon-work.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Work</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="work-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="work-last"></span></span>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="play">
+        <section class="upper-image play-image">
+          <img src="./images/icon-play.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Play</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="play-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="play-last"></span></span>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="study">
+        <section class="upper-image study-image">
+          <img src="./images/icon-study.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Study</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="study-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="study-last"></span></span>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="exercise">
+        <section class="upper-image exercise-image">
+          <img src="./images/icon-exercise.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Exercise</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="exercise-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="exercise-last"></span> </span>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="social">
+        <section class="upper-image social-image">
+          <img src="./images/icon-social.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Social</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="social-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="social-last"></span> </span>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="selfcare">
+        <section class="upper-image selfcare-image">
+          <img src="./images/icon-self-care.svg" alt="" class="icons" />
+        </section>
+        <section class="container-task">
+          <div class="task">
+            <div class="title-ellipsis">
+              <span class="title">Selfcare</span>
+              <img src="./images/icon-ellipsis.svg" alt="" class="ellipsis" />
+            </div>
+            <div class="hours-weeks-hours">
+              <span id="selfcare-actual" class="hours"></span>
+              <span class="weeks-hours"><span id="selfcare-last"></span> </span>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```css
+/* ---- RESPONSIVE DESIGN ----*/
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+@media (min-width: 401px) and (max-width: 800px) {
+  .container {
+    width: 750px;
+    gap: 30px;
+  }
 
-## Deploying your project
+  .name {
+    font-size: 30px;
+  }
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+  .container-task .task .hours {
+    font-size: 30px;
+  }
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+  .task {
+    padding: 30px 20px 40px;
+  }
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+  .container-task .task .weeks-hours {
+    margin: 0;
+    font-size: 12px;
+  }
 
-## Create a custom `README.md`
+  .container .container-task .task .hours-weeks-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-top: 20px;
+  }
+}
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+@media (max-width: 400px) {
+  body {
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+  }
+  .container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+    height: auto;
+    justify-content: center;
+  }
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+  .personal-calendar {
+    height: 200px;
+  }
+  .personal {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+  .personal-calendar .personal .personal-container {
+    padding: 30px 0 30px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    width: 100%;
+  }
 
-## Submitting your solution
+  .personal-container .report-name .report {
+    margin: 0;
+  }
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+  .report-name {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .personal .personal-container .name {
+    font-size: 20px;
+  }
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+  .personal-calendar .personal .photo {
+    width: 70px;
+    height: 70px;
+  }
 
-## Sharing your solution
+  .container .calendar .time {
+    padding: 0;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-There are multiple places you can share your solution:
+  .container .work {
+    height: 160px;
+    width: 100%;
+  }
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+  .container .play {
+    height: 160px;
+    width: 100%;
+  }
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
+  .container .study {
+    height: 160px;
+    width: 100%;
+  }
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+  .container .exercise {
+    height: 160px;
+    width: 100%;
+  }
 
-## Got feedback for us?
+  .container .social {
+    height: 160px;
+    width: 100%;
+  }
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
+  .container .selfcare {
+    height: 160px;
+    width: 100%;
+  }
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+  .container-task {
+    height: 120px;
+  }
 
-**Have fun building!** 🚀
+  .task {
+    padding: 25px;
+    gap: 10px;
+  }
+
+  .task .weeks-hours {
+    margin: 0;
+  }
+
+  .container .container-task .task .hours-weeks-hours {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hours-weeks-hours .hours {
+    font-size: 30px;
+  }
+}
+```
+
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("script cargado");
+  clickDaily = document.getElementById("day");
+  clickWeek = document.getElementById("week");
+  clickMonth = document.getElementById("month");
+
+  const ids = [
+    { title: "Work", actual: "work-actual", last: "work-last" },
+    { title: "Play", actual: "play-actual", last: "play-last" },
+    { title: "Study", actual: "study-actual", last: "study-last" },
+    { title: "Exercise", actual: "exercise-actual", last: "exercise-last" },
+    { title: "Social", actual: "social-actual", last: "social-last" },
+    { title: "Self Care", actual: "selfcare-actual", last: "selfcare-last" },
+  ];
+
+  let data = [];
+
+  fetch("/data.json")
+    .then((response) => response.json())
+    .then((json) => {
+      data = json;
+      showData("weekly");
+    });
+
+  function showData(period) {
+    data.forEach((item, i) => {
+      const actual = document.getElementById(ids[i].actual);
+      const last = document.getElementById(ids[i].last);
+
+      if (actual && last) {
+        actual.textContent = item.timeframes[period].current + "hrs";
+        let textLast = "";
+        if (period === "daily") textLast = "Yesterday - ";
+        else if (period === "weekly") textLast = "Last Week - ";
+        else if (period === "monthly") textLast = "Last Month - ";
+
+        last.textContent = textLast + item.timeframes[period].previous + "hrs";
+      }
+    });
+  }
+
+  clickDaily.addEventListener("click", () => showData("daily"));
+  clickWeek.addEventListener("click", () => showData("weekly"));
+  clickMonth.addEventListener("click", () => showData("monthly"));
+});
+```
